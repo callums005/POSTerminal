@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="POSTerminal.View.Accounts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POSTerminal.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".15*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="CmdNew" Content="New" FontSize="22" Grid.Row="5" Click="CmdNew_Click" />
+            <Button x:Name="CmdModify" Content="Modify" FontSize="22" Grid.Row="6" Click="CmdModify_Click" />
+            <Button x:Name="CmdDelete" Content="Delete" FontSize="22" Grid.Row="7" Click="CmdDelete_Click" />
+            <Button x:Name="CmdBack" Content="Back" FontSize="22" Grid.Row="11" Click="CmdBack_Click" />
+        </Grid>
+
+        <Grid x:Name="New" Visibility="Hidden"  Grid.Column="1" Margin="200 100">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="New Employee" FontSize="40" TextAlignment="Center" />
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Passcode:" FontSize="20" />
+                <TextBox x:Name="InpPasscode"  Grid.Column="1" FontSize="20" />
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Display Name:" FontSize="20" />
+                <TextBox x:Name="InpName"  Grid.Column="1" FontSize="20" />
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Permissions:" FontSize="20" />
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+
+                    <RadioButton x:Name="radTrainee" Content="Trainee" FontSize="18" />
+                    <RadioButton Grid.Row="1" IsChecked="True"  x:Name="radCashier" Content="Cashier" FontSize="18" />
+                    <RadioButton Grid.Row="2" x:Name="radSupervisor" Content="Supervisor" FontSize="18" />
+                    <RadioButton Grid.Row="3" x:Name="radManager" Content="Manager" FontSize="18" />
+                </Grid>
+            </Grid>
+
+            <Button x:Name="CmdCreateNew"  Grid.Row="4" Content="Create" FontSize="20" Click="CmdCreateNew_Click" />
+
+        </Grid>
+        
+    </Grid>
+</UserControl>

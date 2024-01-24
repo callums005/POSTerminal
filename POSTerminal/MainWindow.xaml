@@ -1,0 +1,60 @@
+﻿<Window x:Class="POSTerminal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POSTerminal"
+        xmlns:Components="clr-namespace:POSTerminal.Components"
+        xmlns:View="clr-namespace:POSTerminal.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Topmost="True" Cursor="Cross" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width=".4*" />
+            </Grid.ColumnDefinitions>
+
+            <View:Main Loaded="LoadPage" x:Name="viewMain" Visibility="Visible" />
+            <View:Functions Loaded="LoadPage" x:Name="viewFunctions"  Visibility="Hidden" />
+            <View:Accounts Loaded="LoadPage" x:Name="viewAccounts"  Visibility="Hidden" />
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <ListBox x:Name="LstOrder" Loaded="LstOrder_Loaded" SelectionChanged="LstOrder_SelectionChanged">
+                </ListBox>
+                <Components:Keypad Grid.Row="1" Loaded="Keypad_Loaded" />
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Fill="Red" Grid.Column="0" StrokeThickness="2" Stroke="#FF303030" />
+            <TextBlock x:Name="info1" Loaded="Info1_Loaded" Grid.Column="0" TextAlignment="Center" FontSize="20" Text="PLEASE SIGN ON" FontWeight="Bold" />
+
+        </Grid>
+        
+    </Grid>
+</Window>
